@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  public hero_lists = [];
+  public hero_lists;
   public error_msg;
 
   constructor(private _heroService : HeroService, private new_router: Router) { 
