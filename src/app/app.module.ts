@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HeroService } from './hero.service';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { HeroService } from './hero.service';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot()
