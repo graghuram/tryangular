@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -14,11 +14,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeroService } from './hero.service';
 import {FormsModule} from '@angular/forms';
 
+@Pipe({
+  name : 'addnum'
+})
+
+export class AddnumPipe {
+  transform(value1: string, value2: string) {
+    return value1 + value2;
+  }
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     my_cust_routing_component,
+    AddnumPipe
   ],
   imports: [
     BrowserModule,

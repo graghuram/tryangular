@@ -1,6 +1,33 @@
+<h2> Pipes </h2>
+<h3> 20 + 23 = {{20 | addnum:23}} </h3>
 
-<ul>
-  <li *ngFor="let ind_hero of hero_lists" (click)="get_ind_value(ind_hero)"> {{ind_hero.id}} - {{ind_hero.name}} </li>
-</ul>
-
+<div class="col-md-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th> City Id </th>
+        <th> Cty Name </th>
+        <th> State Id </th>
+        <th> Actions </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ind_city of hero_lists">
+        <td>{{ind_city.city_id}}</td>
+        <td>{{ind_city.city_name}}</td>
+        <td>{{ind_city.state_id}}</td>
+        <td>
+          <div class="action_btns">
+            <a href="javascript:void(0);" title="Edit" (click)="get_ind_value(ind_city)">
+              <i class="fa fa-edit"></i>
+            </a> &nbsp; &nbsp;
+            <a href="javascript:void(0);" title="Delete">
+              <i class="fa fa-trash"></i>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <h2>{{error_msg}}</h2>

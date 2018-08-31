@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { HeroService } from '../hero.service';
 
 import { Router } from '@angular/router';
@@ -12,16 +12,16 @@ export class DashboardComponent implements OnInit {
   public hero_lists;
   public error_msg;
 
-  constructor(private _heroService : HeroService, private new_router: Router) { 
-    
+  constructor(private _heroService: HeroService, private new_router: Router) {
+
   }
 
   ngOnInit() {
     this._heroService.getHeroList().subscribe(data => this.hero_lists = data, error => this.error_msg = error);
   }
 
-  get_ind_value (values) {
-    this.new_router.navigate(['/herodetail', values.id]);
+  get_ind_value(values) {
+    this.new_router.navigate(['/herodetail', values.city_id]);
   }
 
 }
