@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class TempaddComponent implements OnInit {
 
   // all_items = [];
-  all_items = [{'id': 10, 'name': 'Raghu'}, {'id': 11, 'name': 'Ram'}];
+  all_items = [{ 'id': 10, 'name': 'Raghu' }, { 'id': 11, 'name': 'Ram' }];
   item: Object;
   edit_item_index: number;
   action_btn_label: string;
-  titlee:string;
+  titlee: string;
 
   constructor() { }
 
@@ -26,7 +26,7 @@ export class TempaddComponent implements OnInit {
       this.all_items[this.edit_item_index].name = item.name;
     } else {
       this.all_items.push(item);
-    } 
+    }
     this.reset_btn();
   }
 
@@ -40,9 +40,9 @@ export class TempaddComponent implements OnInit {
   }
 
   delete_item(result) {
-    if(confirm("Are you sure to delete?")) {
+    if (confirm("Are you sure to delete?")) {
       var index = this.all_items.indexOf(result);
-      this.all_items.splice(index, 1); 
+      this.all_items.splice(index, 1);
       this.reset_btn();
     }
   }
