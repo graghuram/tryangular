@@ -7,23 +7,27 @@
           <h4> City Details </h4>
         </div>
         <div class="ibox-content">
-          <form action="" id="update_form_id">
+          <form [formGroup] ='city_form_grp' (ngSubmit)="onSubmit()">
               <div class="row">
-                <label class="col-md-4"> City Id </label>
-                <label class="col-md-6"> {{ individual_city.city_id }} </label>
+                <label class="col-md-4"> City Id </label>-
+                <!-- <label class="col-md-6"> {{ individual_city.city_id }} </label> -->
               </div>
               <div class="row">
                 <label class="col-md-4"> City Name </label>
                 <div class="col-md-6"> 
-                  <input type="text" name="city_name" value="{{ individual_city.city_name }}">
+                  <input type="text" formControlName="city_name" >
+                  <!-- <input type="text" formControlName="city_name" [(ngModel)]="individual_city.city_name"> -->
                 </div>
               </div>
               <div class="row">
                 <label class="col-md-4"> State Id </label>
-                <label class="col-md-6"> {{ individual_city.state_id }} </label>
+                <!-- <label class="col-md-6"> {{ individual_city.state_id }} </label> -->
               </div>
               <div class="">
-                <input type="button" class = "btn btn-primary" value="Save" (click) = "savecity()">
+                <!-- <button type="submit" >Submit</button> -->
+                <button type="submit" [disabled]="!city_form_grp.valid">Submit</button>
+                <!-- <input type="button" class = "btn btn-primary" value="Save" (click) = "savecity(individual_city)"> -->
+                <a routerLink="/dashboard" class="btn btn-default"> Cancel </a>
               </div>
           </form>
         </div>
