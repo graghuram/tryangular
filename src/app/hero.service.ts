@@ -16,8 +16,8 @@ export class HeroService {
     return this.http_c.get(this.api_base_url + '/viewlist.php').catch(this.show_error_msg);
   }
 
-  get_individual_city(id) {
-    return this.http_c.post(this.api_base_url + '/editcity.php', id).catch(this.show_error_msg);
+  get_individual_city(id) : Promise <any> {
+    return this.http_c.post(this.api_base_url + '/editcity.php', id).toPromise().catch(this.show_error_msg);
   }
 
   show_error_msg( error : HttpErrorResponse) {

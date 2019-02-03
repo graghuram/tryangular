@@ -4,28 +4,32 @@
     <div class="col-md-12">
       <div class="ibox">
         <div class="ibox-title">
-          <h4> City Details </h4>
+          <h4> Edit City Details </h4>
         </div>
         <div class="ibox-content">
           <form [formGroup] ='city_form_grp' (ngSubmit)="onSubmit()">
               <div class="row">
-                <label class="col-md-4"> City Id </label>-
-                <!-- <label class="col-md-6"> {{ individual_city.city_id }} </label> -->
+                <label class="col-md-4"> City Id </label>
+                <!-- <label class="col-md-6" > {{ getControlLabel('city_id') }} </label> --  -->
+                <label class="col-md-6" > {{ individual_city?.city_id }} </label>
+                <!-- <label class="col-md-6" > {{ individual_city ? individual_city.city_id : '==='}} </label> -->
               </div>
               <div class="row">
                 <label class="col-md-4"> City Name </label>
                 <div class="col-md-6"> 
                   <input type="text" formControlName="city_name" >
+                  <span class='danger-error' *ngIf="city_form_grp.get('city_name').invalid && (city_form_grp.get('city_name').dirty || city_form_grp.get('city_name').touched)">city name is required </span>
                   <!-- <input type="text" formControlName="city_name" [(ngModel)]="individual_city.city_name"> -->
                 </div>
               </div>
               <div class="row">
                 <label class="col-md-4"> State Id </label>
-                <!-- <label class="col-md-6"> {{ individual_city.state_id }} </label> -->
+                <!-- <label class="col-md-6"> {{ getControlLabel('state_id') }} </label> -->
+                <label class="col-md-6" > {{ individual_city?.state_id }} </label>
               </div>
               <div class="">
                 <!-- <button type="submit" >Submit</button> -->
-                <button type="submit" [disabled]="!city_form_grp.valid">Submit</button>
+                <button class="btn btn-primary" type="submit" [disabled]="!city_form_grp.valid">Submit</button>
                 <!-- <input type="button" class = "btn btn-primary" value="Save" (click) = "savecity(individual_city)"> -->
                 <a routerLink="/dashboard" class="btn btn-default"> Cancel </a>
               </div>
