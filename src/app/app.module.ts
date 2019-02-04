@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HeroService } from './hero.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 @Pipe({
   name : 'addnum'
@@ -28,7 +29,8 @@ export class AddnumPipe {
   declarations: [
     AppComponent,
     my_cust_routing_component,
-    AddnumPipe
+    AddnumPipe,
+    ReactiveformComponent
   ],
   imports: [
     BrowserModule,

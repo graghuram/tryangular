@@ -1,0 +1,15 @@
+<form [formGroup]="userdetails">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" class="form-control" formControlName="title">
+    <span>
+      <span></span>
+    </span>
+  </div>
+  <div class="form-group">
+    <label for="image">image:</label>
+    <input type="file" class="form-control" formControlName="image" (change)="fileselect($event)">
+  </div>
+
+  <button type="submit" class="btn btn-default" (ngsubmit)="submit()">Submit</button>
+</form>
