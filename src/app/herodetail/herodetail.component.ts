@@ -55,7 +55,8 @@ export class HerodetailComponent implements OnInit {
   }
 
   onSubmit() {
-    console.warn(this.city_form_grp.value);
+    console.log(this.city_form_grp.value);
+    this._heroService.save_ind_city(this.city_form_grp.value).subscribe(data => this.individual_city = data, error => this.error_msg = error);
   }
 
   savecity(value) {

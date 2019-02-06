@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HeroService } from './hero.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { AuthGuard} from './auth.guard';
 
 @Pipe({
   name : 'addnum'
@@ -30,7 +30,6 @@ export class AddnumPipe {
     AppComponent,
     my_cust_routing_component,
     AddnumPipe,
-    ReactiveformComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +41,7 @@ export class AddnumPipe {
     TooltipModule.forRoot(),
     ModalModule.forRoot()
   ],
-  providers: [HeroService],
+  providers: [HeroService, AuthGuard],
   bootstrap: [AppComponent],
   exports: [BsDropdownModule, TooltipModule, ModalModule]
 })

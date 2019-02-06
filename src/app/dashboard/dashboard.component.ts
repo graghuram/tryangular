@@ -15,7 +15,13 @@ export class DashboardComponent implements OnInit {
   constructor(private _heroService: HeroService, private new_router: Router) {
 
   }
-
+  changestatus(){
+    if (localStorage.getItem('raghu') == 'yes') {
+      localStorage.removeItem('raghu');
+    } else {
+      localStorage.setItem('raghu','yes');
+    }
+  }
   ngOnInit() {
     this._heroService.getHeroList().subscribe(data => this.hero_lists = data, error => this.error_msg = error);
   }
