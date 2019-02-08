@@ -30,9 +30,12 @@ export class HerodetailComponent implements OnInit {
   //   state_id: [''],
   // });
 
-  constructor(private _heroService: HeroService, private route_details: ActivatedRoute, private fb: FormBuilder) { }
+  constructor(private _heroService: HeroService, private route_details: ActivatedRoute, private fb: FormBuilder) { 
+    console.log("constructor");
+  }
 
   ngOnInit() {
+    console.log("ngOnInit");
     this.route_details.paramMap.subscribe(params => {
       this.get_id = parseInt(params.get("id"));
       this.value = params.get("value");
@@ -52,6 +55,34 @@ export class HerodetailComponent implements OnInit {
         error => this.error_msg = error
       );
     }
+  }
+
+  ngOnChanges() {
+    console.log("ngOnChanges");
+  }
+
+  ngDoCheck(): void {
+    console.log("ngDoCheck")
+  }
+
+  ngOnDestroy() {
+    console.log("ngOnDestroy")
+  }
+
+  ngAfterContentInit(): void {
+    console.log("ngAfterContentInit")
+  }
+
+  ngAfterContentChecked(): void {
+    console.log("ngAfterContentChecked")
+  }
+
+  ngAfterViewChecked(): void {
+    console.log("ngAfterViewChecked")
+  }
+
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit")
   }
 
   onSubmit() {
